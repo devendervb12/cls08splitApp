@@ -1,0 +1,49 @@
+{
+ "sap.app" : {
+   "id" : "com.emax.product",
+   "dataSources" : {
+          "esmax" : {
+          	 "uri" : "proxy/https/services.odata.org/V2/(S(bbyub55op4j5quyxtnnsc354))/OData/OData.svc/"
+          }
+   }
+ },
+ "sap.ui5" : {
+     "rootView" : "com.emax.product.view.SApp",
+     "models" : {
+       "" : {
+        "dataSource" : "esmax"
+       }
+     },
+     "routing" : {
+      	"config" : {
+      	  "viewPath" : "com.emax.product.view",
+      	  "viewType" : "XML",
+      	   "controlId" : "idSplitApp",
+		   "routerClass" : "sap.m.routing.Router"
+      	},
+      	"routes" : [
+      	  {
+      	    "pattern" : "",
+      	    "name" : "homePage",
+      	    "target" : ["mPage", "dPage"]
+      	  },
+      	  {
+      	   "pattern" : "toDetail/{title}",
+      	   "name" : "toDetails",
+      	   "target" : ["mPage","dPage"]
+      	  }
+      	],
+      	"targets" : {
+      	   "mPage" : {
+      	      "viewName" : "ProductList",     	     
+      	      "controlAggregation" : "masterPages"
+      	   },
+      	   "dPage" : {
+      	     "viewName" : "ProductDetails",
+      	     "controlAggregation" : "detailPages"
+      	   }
+      	}
+     }
+ }
+ 
+}

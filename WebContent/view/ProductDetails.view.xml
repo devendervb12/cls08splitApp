@@ -1,0 +1,53 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" 	xmlns:f="sap.ui.layout.form"
+		controllerName="com.emax.product.controller.ProductDetails" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Product Details">
+		<content>
+	        	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormDisplay354"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			title="Product {ID} Details"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="ID" />
+				<Text  text="{ID}" id="prodID"/>
+				<Label text="Name" />
+				<Text  text="{Name}" id="prodName"/>
+				<Label text="Description" />
+				<Text  text="{Description}"/>
+				<Label text="Release Date" />
+				<Text  text="{ReleaseDate}" />
+				<Label text="Discontinued Date" />
+				<Text  text="{DiscontinuedDate}"/>
+				<Label text="Rating" />
+				<Text  text="{Rating}"/>
+				<Label text="Price" />
+				<Text  text="{Price}"/>
+				
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
+		</content>
+		<footer>
+		   <Bar>
+		      <contentRight>
+		          <Button text="Create" press="onCreate"/>
+		           <Button text="Update" press="onUpdate"/>
+		            <Button text="Delete" press="onDelete"/>
+		      </contentRight>
+		   </Bar>
+		</footer>
+	</Page>
+</core:View>
